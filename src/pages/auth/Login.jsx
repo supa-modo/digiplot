@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
+import { PiBuildingOffice, PiBuildingOfficeBold, PiBuildingsBold } from "react-icons/pi";
 import { 
   TbUser, 
   TbHome, 
@@ -134,7 +135,7 @@ const Login = () => {
               <div className="mb-16">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-white rounded-sm flex items-center justify-center">
-                    <span className="text-secondary-plot font-bold text-xl">D</span>
+                    <PiBuildingsBold size={22}/>
                   </div>
                   <h1 className="text-3xl font-light text-white tracking-wider">DIGIPLOT</h1>
                 </div>
@@ -341,27 +342,14 @@ const Login = () => {
           {/* Registration link with enhanced styling */}
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-600">
-              Don't have an account?{' '}
+              Experiencing login issues ?{' '}
               <Link to="/register" className="font-medium text-primary-plot hover:text-primary-plot/80">
-                Create an account
+                Contact Support
               </Link>
             </p>
           </div>
           
-          {/* Security note with Dashboard-style card */}
-          <div className="mt-8 bg-gray-50 rounded-lg p-4 border border-gray-200">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 bg-gradient-to-br from-secondary-plot/20 to-secondary-plot/10 p-2 rounded-lg mr-3">
-                <TbCheck className="h-5 w-5 text-secondary-plot" />
-              </div>
-              <div>
-                <h3 className="text-xs font-medium text-gray-700 mb-1">Secure Login</h3>
-                <p className="text-xs text-gray-500">
-                  Your connection to DigiPlot is encrypted and your information is never shared with third parties.
-                </p>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>

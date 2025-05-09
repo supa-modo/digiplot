@@ -32,14 +32,24 @@ body {
 
 
 @theme {
-
-    --color-primary-plot:  #0291D9; /* Blue */
+    
+    --color-primary-plot:  #01818d; /* Blue */
     --color-secondary-plot: #64748B; /* Slate */
     --color-success-plot: #16A34A; /* Green */
     --color-warning-plot: #EAB308; /* Yellow */
     --color-danger-plot: #DC2626; /* Red */
     --color-info-plot: #4F46E5; /* Indigo */
     --color-background-plot: #F9FAFB; /* Gray-50 */
+
+    --color-primary-100: #e6f3f4;
+    --color-primary-200: #bfe0e3; 
+    --color-primary-300: #8ccbd0; 
+    --color-primary-400: #59b5bd; 
+    --color-primary-500: #01818d; 
+    --color-primary-600: #016a74; 
+    --color-primary-700: #01535c; 
+    --color-primary-800: #003c43; 
+    --color-primary-900: #00262b; 
 
 
     /* Font families */

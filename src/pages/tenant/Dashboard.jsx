@@ -111,7 +111,7 @@ const TenantDashboard = () => {
       <div className="mb-4 md:mb-6">
           <div className="px-4 flex items-baseline justify-between mb-2 lg:mb-0">
               <div className="">
-                <div className="flex items-center mb-1">
+                <div className="flex items-center mb-2 md:mb-3">
                   <div className="flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-secondary-plot/20 to-primary-plot/20 text-[0.8rem] md:text-sm font-medium text-secondary-plot">
                     <TbSun className="h-4 w-4 mr-1.5 text-primary-plot" />
                     <span>Good {timeOfDay}</span>
@@ -142,7 +142,7 @@ const TenantDashboard = () => {
 
       {/* Rent Status Card - Premium Design */}
       <div className="mb-10">
-        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl bg-gradient-to-br from-secondary-plot/90 via-secondary-plot to-primary-plot/80">
+        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl bg-gradient-to-br from-primary-700 via-secondary-plot to-primary-plot/80">
           {/* Enhanced glass morphism effect */}
           <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
 
@@ -162,18 +162,16 @@ const TenantDashboard = () => {
           ></div>
 
           <div className="relative px-4 py-5 md:px-10 md:py-10">
-            <div className="flex flex-col lg:flex-row justify-between lg:items-start space-y-5 lg:space-y-0 lg:space-x-8">
+            <div className="flex flex-col lg:flex-row justify-between lg:items-start space-y-4 lg:space-y-0 lg:space-x-8">
               {/* Left side - Rent info */}
               <div className="space-y-2 md:space-y-4 flex-1">
                 <div className="flex items-start  space-x-4 pt-2 md:pt-0">
                   <div className="flex items-center space-x-2">
-                    <h2 className="flex items-center text-lg md:text-lg lg:text-xl font-bold text-amber-200 tracking-tight">
-                      Rental Status <TbChevronRight className="ml-2" />
+                    <h2 className="text-base md:text-lg lg:text-xl font-bold text-amber-200 tracking-tight">
+                      Unit {summary.unit?.unitNumber}
                     </h2>
                     <div className="flex flex-wrap items-center text-white/90 text-xs md:text-sm font-medium">
-                      <div className="flex items-center bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
-                        <span>Unit {summary.unit?.unitNumber}</span>
-                      </div>
+                        
                       <span className="mx-2 text-white/60">•</span>
                       <div className="flex items-center bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
                         <TbStairs className="mr-1.5 h-4 w-4" />
@@ -183,11 +181,11 @@ const TenantDashboard = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 lg:mt-2">
+                <div className="mt-4 md:mt-6 lg:mt-2">
                   <div className="flex items-center space-x-3 mb-3">
                     <div className="flex-1 h-0.5 bg-white/20 rounded-full"></div>
-                    <span className="text-white/60 text-xs font-medium uppercase tracking-wider">
-                      Payment Details
+                    <span className="text-white/60 text-[0.7rem] md:text-xs font-medium uppercase tracking-wider">
+                      Rental Payment
                     </span>
                     <div className="flex-1 h-0.5 bg-white/20 rounded-full"></div>
                   </div>
@@ -202,14 +200,14 @@ const TenantDashboard = () => {
                           /month
                         </span>
                       </div>
-                      <p className="text-white/70 text-sm mt-1">
+                      <p className="text-white/70 text-[0.8rem] md:text-sm mt-1">
                         Due on the 1st of every month
                       </p>
                     </div>
 
-                    <div className="mt-4 lg:mt-0">
+                    <div className="hidden lg:block mt-4 lg:mt-0">
                       <div
-                        className={`inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium shadow-lg ${
+                        className={`inline-flex items-center px-4 py-2 rounded-lg text-[0.8rem] md:text-sm font-medium shadow-lg ${
                           summary.rentStatus === "paid"
                             ? "bg-green-600/40 text-white ring-1 ring-green-400"
                             : "bg-amber-600/40 text-white ring-1 ring-amber-400"
@@ -231,13 +229,13 @@ const TenantDashboard = () => {
                   </div>
 
                   {summary.rentStatus === "paid" ? (
-                    <div className="mt-4 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                    <div className="hidden lg:block  mt-4 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                       <div className="flex items-center">
                         <TbCalendarEvent className="h-5 w-5 text-white/80 mr-2" />
-                        <span className="text-white/90 text-sm">
+                        <span className="text-white/90 text-[0.8rem] md:text-sm">
                           Next payment due:{" "}
                         </span>
-                        <span className="ml-2 font-semibold text-white text-sm">
+                        <span className="ml-2 font-semibold text-white text-[0.8rem] md:text-sm">
                           {formatDate(summary.nextPaymentDue)}
                         </span>
                       </div>
@@ -246,7 +244,7 @@ const TenantDashboard = () => {
                     <div className="hidden lg:block mt-4 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                       <div className="flex items-center text-white mb-1">
                         <TbAlertTriangle className="h-6 w-6 text-amber-300 mr-2" />
-                        <p className="text-sm font-medium">
+                        <p className="text-[0.8rem] md:text-sm font-medium">
                           Your monthly rent payment is due
                         </p>
                       </div>
@@ -258,24 +256,31 @@ const TenantDashboard = () => {
               {/* Right side - Action */}
               <div className="lg:max-w-xs w-full">
                 {summary.rentStatus === "unpaid" ? (
-                  <div className="space-y-2 bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 mb-4">
-                      <div className="flex justify-between items-center text-sm">
+                  <div className="space-y-1.5 md:space-y-2 bg-white/10 backdrop-blur-sm rounded-xl p-3.5 md:p-5 border border-white/20">
+                     <div className="flex lg:hidden items-center text-white px-2 mb-3">
+                        <TbAlertTriangle className="h-5 md:h-6 w-5 md:w-6 text-amber-300 mr-2" />
+                        <p className="text-[0.8rem] md:text-sm text-amber-100">
+                          Your monthly rent payment is due
+                        </p>
+                      </div>
+                    
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 mb-3 md:mb-4">
+                      <div className="flex justify-between items-center text-[0.8rem]">
                         <span className="text-white/80">Amount due:</span>
-                        <span className="font-bold text-amber-200">
+                        <span className="font-bold text-amber-200 text-sm">
                           {formatCurrency(summary.rentAmount)}
                         </span>
                       </div>
-                      <div className="flex justify-between items-center text-sm mt-2">
+                      <div className="flex justify-between items-center text-[0.8rem] mt-1 md:mt-2">
                         <span className="text-white/80">Due date:</span>
-                        <span className="font-medium text-white">
+                        <span className="font-medium text-white text-sm">
                           May 1, 2025
                         </span>
                       </div>
                     </div>
 
                     <Link to="/tenant/payments" className="block">
-                      <button className="group relative w-full overflow-hidden bg-gradient-to-r from-white to-gray-100 text-[0.95rem] md:text-base text-secondary-plot px-6 py-3 md:py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      <button className="group relative w-full overflow-hidden bg-gradient-to-r from-white to-gray-100 text-[0.9rem] md:text-[0.95rem] text-secondary-plot px-6 py-3 md:py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                         <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
                         <span className="relative flex items-center justify-center font-bold">
                           <span>Pay Now -</span>
@@ -288,7 +293,7 @@ const TenantDashboard = () => {
                       </button>
                     </Link>
 
-                    <p className="text-white/70 font-sans tracking-wide text-xs text-center ">
+                    <p className="text-white/70 font-sans text-xs text-center ">
                       Secure payment processed via M-Pesa
                     </p>
                   </div>
@@ -600,8 +605,8 @@ const TenantDashboard = () => {
 
             {/* Payment List */}
             {summary.recentPayments && summary.recentPayments.length > 0 ? (
-              <div className="bg-white rounded-xl shadow-md p-5 border border-gray-100">
-                <div className="space-y-3">
+              <div className="bg-white rounded-xl shadow-md px-3 md:px-6 py-4 border border-gray-100">
+                <div className="space-y-2.5">
                   {summary.recentPayments.slice(0, 3).map((payment, index) => (
                     <div
                       key={payment.id}
