@@ -352,6 +352,116 @@ export const mockMaintenanceRequests = [
     submittedAt: "2025-04-05T11:45:00Z",
     updatedAt: "2025-04-05T11:45:00Z",
   },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
+  {
+    id: 4,
+    tenantId: 1,
+    unitId: 1,
+    title: "Clogged Drain",
+    description:
+      "The bathroom sink drain is clogged and water is draining slowly.",
+    status: "pending",
+    submittedAt: "2025-04-05T11:45:00Z",
+    updatedAt: "2025-04-05T11:45:00Z",
+  },
 ];
 
 export const mockNotifications = [

@@ -65,6 +65,11 @@ const TenantDashboard = () => {
     fetchSummary();
   }, [user]);
 
+  const pageStyles = {
+    wrapper: "flex flex-col min-h-screen",
+    content: "flex-grow",
+  };
+
   if (loading) {
     return (
       <div className="flex h-[80vh] items-center justify-center">
@@ -105,8 +110,10 @@ const TenantDashboard = () => {
   }
 
   return (
-    <>
-    <div className="pt-6 pb-6 mx-auto max-w-screen-2xl px-2 md:px-4">
+    <div className={pageStyles.wrapper}>
+      <div
+        className={`${pageStyles.content} pt-6 pb-10 px-2.5 md:px-10`}
+      >
       {/* Welcome Section */}
       <div className="mb-4 md:mb-6">
           <div className="px-4 flex items-baseline justify-between mb-2 lg:mb-0">
@@ -682,7 +689,7 @@ const TenantDashboard = () => {
       </div>
     </div>
     <Footer /> 
-    </>
+    </div>
   );
 };
 

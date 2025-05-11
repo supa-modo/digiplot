@@ -57,6 +57,12 @@ const Profile = () => {
     fetchProfile();
   }, [user]);
 
+
+  const pageStyles = {
+    wrapper: "flex flex-col min-h-screen",
+    content: "flex-grow",
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -151,7 +157,10 @@ const Profile = () => {
   }
 
   return (
-    <div className="pt-6 pb-10 mx-auto max-w-screen-2xl px-2 md:px-4">
+    <div className={pageStyles.wrapper}>
+      <div
+        className={`${pageStyles.content} pt-6 pb-10 md:px-4`}
+      >
       {/* Welcome & Header Section */}
       <div className="mb-6">
         <div className="px-4 flex items-baseline justify-between mb-2">
@@ -382,7 +391,9 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      </div>
       
+      {/* Footer */}
       <Footer />
     </div>
   );

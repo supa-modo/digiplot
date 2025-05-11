@@ -70,6 +70,12 @@ const MaintenancePage = () => {
     fetchRequests();
   }, [user]);
 
+
+  const pageStyles = {
+    wrapper: "flex flex-col min-h-screen",
+    content: "flex-grow",
+  };
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
@@ -250,8 +256,10 @@ const MaintenancePage = () => {
   const filteredRequests = getFilteredRequests();
 
   return (
-    <div className="min-h-screen">
-      <div className="pt-6 pb-10 mx-auto max-w-screen-2xl px-2 md:px-4">
+    <div className={pageStyles.wrapper}>
+      <div
+        className={`${pageStyles.content} pt-6 pb-10 md:px-4`}
+      >
         {/* Welcome & Header Section */}
         <div className="mb-6">
           <div className="px-4 flex flex-col md:flex-row md:items-center md:justify-between">

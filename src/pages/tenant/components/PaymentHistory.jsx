@@ -58,7 +58,6 @@ const PaymentHistory = ({
           />
         </div>
       ) : (
-        <>
           <div className="mb-6">
             <h2 className="text-xl font-bold text-secondary-plot mb-4">
               Rent Payment History
@@ -146,7 +145,7 @@ const PaymentHistory = ({
 
             {/* Payments Table */}
             <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow">
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto hide-scrollbar">
                 <table className="w-full border-collapse text-left">
                   <thead>
                     <tr className="border-b border-gray-200 bg-gray-50">
@@ -168,7 +167,7 @@ const PaymentHistory = ({
                       <th className="pl-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Amount
                       </th>
-                      <th className="pl-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th className="pl-6 py-3 text-xs max-w-[120px] font-medium text-gray-500 uppercase tracking-wider">
                         Actions
                       </th>
                     </tr>
@@ -209,21 +208,29 @@ const PaymentHistory = ({
                               {formatCurrency(payment.amount)}
                             </div>
                           </td>
-                          <td className="pl-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <div className="flex items-center space-x-3">
+                          <td className="pl-6 py-4 whitespace-nowrap text-sm font-medium max-w-[120px]">
+                            <div className="flex items-center space-x-4">
                               <button
                                 onClick={() => setViewingPayment(payment)}
                                 className="text-primary-plot hover:text-primary-700 transition"
                                 title="View details"
                               >
-                                <TbInfoCircle className="h-5 w-5" />
+                                <div className="flex items-center space-x-2 underline underline-offset-4">
+                                  <TbInfoCircle className="h-5 w-5" />
+                                  <span className="sr-only">View Details</span>
+                                  <span className="">Details</span>
+                                </div>
                               </button>
                               {payment.status === "paid" && (
                                 <button
-                                  className="text-secondary-plot hover:text-secondary-700 transition"
+                                  className="text-secondary-plot bg-secondary-plot/10 px-3 py-1 rounded-md hover:text-secondary-700 transition"
                                   title="Download receipt"
                                 >
-                                  <TbDownload className="h-5 w-5" />
+                                  <div className="flex items-center space-x-2 ">
+                                    <TbDownload className="h-5 w-5" />
+                                    <span className="sr-only">Download Receipt</span>
+                                    <span className="">Receipt</span>
+                                  </div>
                                 </button>
                               )}
                             </div>
@@ -237,7 +244,7 @@ const PaymentHistory = ({
                             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
                               <TbFilter className="h-6 w-6 text-gray-400" />
                             </div>
-                            <p className="mt-2 text-sm font-medium text-gray-900">
+                            <p className="mt-2 text-[0.8rem] md:text-sm font-medium text-primary-plot">
                               No payments found
                             </p>
                             <p className="text-xs text-gray-500">
@@ -254,7 +261,6 @@ const PaymentHistory = ({
               </div>
             </div>
           </div>
-        </>
       )}
     </div>
   );

@@ -50,6 +50,11 @@ const MaintenancePage = () => {
     fetchRequests();
   }, [user]);
 
+  const pageStyles = {
+  wrapper: "flex flex-col min-h-screen",
+  content: "flex-grow",
+};
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {

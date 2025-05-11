@@ -19,11 +19,6 @@ import PaymentSummaryCards from "./components/PaymentSummaryCards";
 import PaymentHistory from "./components/PaymentHistory";
 import MpesaIcon from "../../components/common/MpesaIcon";
 
-// CSS for page layout with footer always at bottom
-const pageStyles = {
-  wrapper: "flex flex-col min-h-screen",
-  content: "flex-grow",
-};
 
 const PaymentsPage = () => {
   const { user } = useAuth();
@@ -85,6 +80,11 @@ const PaymentsPage = () => {
     fetchData();
   }, [user]);
 
+  const pageStyles = {
+    wrapper: "flex flex-col min-h-screen",
+    content: "flex-grow",
+  };
+
   const handlePaymentSuccess = (newPayment) => {
     // Update the payments list with the new payment
     setPayments([newPayment, ...payments]);
@@ -145,9 +145,9 @@ const PaymentsPage = () => {
   }
 
   return (
-    <div className={pageStyles.wrapper}>
+    <div className={`${pageStyles.wrapper} `}>
       <div
-        className={`${pageStyles.content} pt-6 pb-10 max-w-screen-2xl md:px-4`}
+        className={`${pageStyles.content} pt-6 pb-10 md:px-4`}
       >
         {/* Page Header Section */}
         <div className="mb-6">
