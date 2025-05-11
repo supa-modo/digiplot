@@ -175,7 +175,7 @@ const Login = () => {
               {/* Main headline */}
               <h2 className="text-5xl font-light text-white leading-tight mb-6">
                 <span className="font-medium">Elevate</span> your Property &
-                Rental <span className="text-amber-200">experience</span>
+                Rental <span className="text-amber-500">experience</span>
               </h2>
 
               <p className="text-white/70 max-w-xl mb-12 leading-relaxed">
@@ -187,19 +187,19 @@ const Login = () => {
               {/* Feature points with updated styling */}
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-[6px] h-[6px] bg-amber-200 rotate-45"></div>
+                  <div className="w-[6px] h-[6px] bg-amber-500 rotate-45"></div>
                   <p className="text-white font-light">
                     Streamlined property oversight and management
                   </p>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-[6px] h-[6px] bg-amber-200 rotate-45"></div>
+                  <div className="w-[6px] h-[6px] bg-amber-500 rotate-45"></div>
                   <p className="text-white font-light">
                     Secure and transparent tenant communication
                   </p>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-[6px] h-[6px] bg-amber-200 rotate-45"></div>
+                  <div className="w-[6px] h-[6px] bg-amber-500 rotate-45"></div>
                   <p className="text-white font-light">
                     Sophisticated financial tracking and reporting
                   </p>
@@ -212,13 +212,22 @@ const Login = () => {
 
       {/* Right side - Login form  */}
       <div className="w-full lg:w-5/12 flex flex-col justify-center p-6 sm:p-8 lg:p-16 relative">
+        {/* Subtle pattern overlay */}
+        <div
+          className="absolute inset-0 z-0 justify-center opacity-[6%]"
+          style={{
+            backgroundImage: `url("/bg.webp")`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></div>
         {/* Mobile view header */}
         <div className="lg:hidden mb-8">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-8 h-8 bg-secondary-plot rounded-sm flex items-center justify-center">
               <PiBuildingsBold size={22} className="text-white" />
             </div>
-            <h1 className="text-2xl font-medium text-secondary-plot tracking-wider">
+            <h1 className="text-2xl font-medium text-primary-500 tracking-wider">
               DIGIPLOT
             </h1>
           </div>
@@ -227,12 +236,24 @@ const Login = () => {
           </p>
         </div>
 
-        <div className="max-w-md w-full mx-auto">
+        <div className="max-w-md w-full z-10 mx-auto">
           {/* Welcome section with time of day greeting */}
           <div className="mb-6 md:mb-8">
             <div className="flex items-center mb-3">
-              <div className="flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-secondary-plot/20 to-primary-plot/20 text-[0.8rem] md:text-sm font-medium text-secondary-plot">
-                <TbSun className="h-4 w-4 mr-1.5 text-primary-plot" />
+              <div
+                className={`flex items-center px-3 py-1 rounded-full  text-[0.8rem] md:text-sm font-medium ${
+                  formData.userType === "tenant"
+                    ? "bg-gradient-to-r from-secondary-plot/20 to-primary-plot/20 text-secondary-plot "
+                    : "bg-gradient-to-r from-secondary-plot/20 to-amber-700/30 text-amber-900/60"
+                } `}
+              >
+                <TbSun
+                  className={`h-4 w-4 mr-1.5 ${
+                    formData.userType === "tenant"
+                      ? "text-primary-plot "
+                      : "text-amber-600 "
+                  } `}
+                />
                 <span>Good {timeOfDay}</span>
               </div>
 
@@ -250,7 +271,7 @@ const Login = () => {
 
             <h2 className="text-2xl md:text-3xl font-bold text-secondary-plot mb-2">
               Welcome back
-              <span className="text-primary-plot">!</span>
+              <span className="ml-1 ">!</span>
             </h2>
             <p className="text-gray-500 text-[0.9rem] md:text-base">
               Sign in with your credentials to continue
@@ -258,7 +279,7 @@ const Login = () => {
           </div>
 
           {/* User type selector with Dashboard-inspired design */}
-          <div className="mb-6 md:mb-8 border-b border-gray-200">
+          <div className="mb-6 md:mb-8 border-b border-gray-300/70">
             <div className="flex -mb-px">
               <button
                 type="button"
@@ -267,7 +288,7 @@ const Login = () => {
                 }
                 className={`py-4 px-8 border-b-2 font-medium text-sm md:text-base transition-colors duration-300 ${
                   formData.userType === "tenant"
-                    ? "border-primary-plot text-primary-plot backdrop-blur-sm bg-gradient-to-t from-primary-500/10 via-transparent to-transparent"
+                    ? "border-primary-plot text-primary-plot bg-gradient-to-t from-primary-500/15 via-transparent to-transparent"
                     : "border-transparent text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -291,9 +312,9 @@ const Login = () => {
 
           {/* Error message */}
           {error && (
-            <div className="mb-4 md:mb-6 p-4 rounded-md border-l-4 border-red-500 bg-red-50 text-red-800 flex items-start">
+            <div className="mb-4 md:mb-6 p-4 rounded-md border-l-4 border-red-500 bg-red-100/80 text-red-800/80 flex items-start">
               <TbAlertTriangle className="h-4 md:h-5 md:w-5 mr-2 flex-shrink-0" />
-              <p className="text-xs md:text-sm">{error}</p>
+              <p className="text-xs md:text-sm font-medium">{error}</p>
             </div>
           )}
 
@@ -319,7 +340,11 @@ const Login = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="appearance-none block w-full pl-12 pr-3 py-3 text-sm md:text-base font-medium border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary-plot focus:border-primary-plot bg-white text-gray-700"
+                    className={`appearance-none block w-full pl-12 pr-3 py-3 text-sm md:text-base font-medium border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none ${
+                      formData.userType === "tenant"
+                        ? "focus:ring-primary-plot focus:border-primary-plot"
+                        : "focus:ring-amber-600/80 focus:border-amber-600/80 "
+                    }  bg-white text-gray-700`}
                     placeholder="you@example.com"
                   />
                 </div>
@@ -344,7 +369,11 @@ const Login = () => {
                     required
                     value={formData.password}
                     onChange={handleInputChange}
-                    className="appearance-none block w-full pl-12 pr-3 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary-plot focus:border-primary-plot bg-white text-gray-700"
+                    className={`appearance-none block w-full pl-12 pr-3 py-3 text-sm md:text-base font-medium border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none ${
+                      formData.userType === "tenant"
+                        ? "focus:ring-primary-plot focus:border-primary-plot"
+                        : "focus:ring-amber-600/80 focus:border-amber-600/80 "
+                    }  bg-white text-gray-700`}
                     placeholder="••••••••"
                   />
                 </div>
@@ -370,7 +399,11 @@ const Login = () => {
               <div className="text-[0.8rem] md:text-sm">
                 <Link
                   to="/forgot-password"
-                  className="font-medium text-primary-plot hover:text-primary-plot/80"
+                  className={`font-medium  ${
+                    formData.userType === "tenant"
+                      ? "text-primary-plot hover:text-primary-plot/80"
+                      : "text-amber-700 hover:text-amber-800"
+                  } `}
                 >
                   Forgot password?
                 </Link>
@@ -382,7 +415,11 @@ const Login = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full text-sm md:text-base overflow-hidden bg-gradient-to-r from-secondary-plot to-primary-plot text-white px-6 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className={`group relative w-full text-sm md:text-base overflow-hidden ${
+                  formData.userType === "tenant"
+                    ? "bg-gradient-to-r from-secondary-plot to-primary-plot"
+                    : "bg-gradient-to-r from-secondary-plot/80 to-amber-700"
+                } text-white px-6 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300`}
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-shimmer"></span>
                 <span className="relative flex items-center justify-center font-medium">
@@ -408,7 +445,11 @@ const Login = () => {
               Experiencing login issues?{" "}
               <Link
                 to="/register"
-                className="text-primary-plot hover:text-primary-plot/80 underline underline-offset-4"
+                className={`underline underline-offset-4 ${
+                  formData.userType === "tenant"
+                    ? "text-primary-plot hover:text-primary-plot/80"
+                    : "text-amber-700 hover:text-amber-800"
+                } `}
               >
                 Contact Support
               </Link>
