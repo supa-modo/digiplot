@@ -10,7 +10,6 @@ import Login from './pages/auth/Login';
 // Tenant Pages
 import TenantLayout from './layouts/TenantLayout';
 import TenantDashboard from './pages/tenant/Dashboard';
-import TenantPayments from './pages/tenant/Payments';
 import TenantMaintenance from './pages/tenant/Maintenance';
 import TenantProfile from './pages/tenant/Profile';
 
@@ -26,6 +25,7 @@ import TenantForm from './pages/landlord/TenantForm';
 import Maintenance from './pages/landlord/Maintenance';
 import Reports from './pages/landlord/Reports';
 import Units from './pages/landlord/Units';
+import PaymentsPage from './pages/tenant/PaymentsPage';
 
 const App = () => {
   return (
@@ -46,7 +46,7 @@ const App = () => {
             }
           >
             <Route index element={<TenantDashboard />} />
-            <Route path="payments" element={<TenantPayments />} />
+            <Route path="payments" element={<PaymentsPage />} />
             <Route path="maintenance" element={<TenantMaintenance />} />
             <Route path="profile" element={<TenantProfile />} />
           </Route>

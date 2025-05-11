@@ -294,7 +294,7 @@ const EnhancedMaintenanceRequestModal = ({ isOpen, onClose, onRequestSuccess }) 
               <label className="mb-2 block text-sm font-medium text-gray-700">
                 Upload Images (Optional)
               </label>
-              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-8">
                 <div className="text-center">
                   <TbPhoto className="mx-auto h-12 w-12 text-gray-300" />
                   <div className="mt-4 flex text-sm leading-6 text-gray-600">
@@ -302,7 +302,7 @@ const EnhancedMaintenanceRequestModal = ({ isOpen, onClose, onRequestSuccess }) 
                       htmlFor="file-upload"
                       className="relative cursor-pointer rounded-md bg-white font-semibold text-primary-plot focus-within:outline-none focus-within:ring-2 focus-within:ring-primary-plot focus-within:ring-offset-2 hover:text-primary-plot/80"
                     >
-                      <span>Upload files</span>
+                      <span className="">Upload files</span>
                       <input
                         id="file-upload"
                         name="file-upload"
@@ -325,10 +325,10 @@ const EnhancedMaintenanceRequestModal = ({ isOpen, onClose, onRequestSuccess }) 
                 <label className="mb-2 block text-sm font-medium text-gray-700">
                   Selected Images
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {imagePreview.map((image, index) => (
-                    <div key={index} className="relative group">
-                      <div className="aspect-square rounded-lg overflow-hidden bg-gray-100 border border-gray-200 flex items-center justify-center">
+                    <div key={index} className="relative group w-20 h-20">
+                      <div className="rounded-lg overflow-hidden bg-gray-100 border border-gray-200 flex items-center justify-center">
                         <div className="absolute inset-0 flex items-center justify-center">
                           <TbPhoto className="h-8 w-8 text-gray-400" />
                         </div>
@@ -388,11 +388,12 @@ const EnhancedMaintenanceRequestModal = ({ isOpen, onClose, onRequestSuccess }) 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-[1px]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 bg-black/50 backdrop-blur-[2px]">
       <div 
-        className="relative w-full max-w-xl rounded-2xl bg-white shadow-2xl max-h-[90vh] overflow-auto"
+        className="relative w-full max-w-2xl rounded-2xl bg-white shadow-2xl overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
+        
         {/* Modal header */}
         <div className="sticky top-0 z-20 flex items-center justify-between rounded-t-2xl bg-gradient-to-r from-secondary-plot to-primary-plot p-5 text-white">
           <h3 className="text-xl font-bold">New Maintenance Request</h3>
@@ -461,7 +462,8 @@ const EnhancedMaintenanceRequestModal = ({ isOpen, onClose, onRequestSuccess }) 
                   </button>
                 ) : (
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={handleSubmit}
                     disabled={submitting}
                     className="inline-flex items-center rounded-lg bg-gradient-to-r from-secondary-plot to-primary-plot px-4 py-2 text-sm font-medium text-white shadow-sm hover:from-secondary-plot/90 hover:to-primary-plot/90"
                   >

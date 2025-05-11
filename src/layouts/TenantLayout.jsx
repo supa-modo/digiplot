@@ -294,8 +294,8 @@ const TenantLayout = () => {
                 </div>
                 
                 {/* Navigation */}
-                <div className="mt-6 px-4 relative z-10">
-                  <h3 className="px-3 text-xs font-semibold uppercase tracking-wider text-white/60 mb-4">
+                <div className="mt-6 px-3 relative z-10">
+                  <h3 className="px-4 text-xs font-semibold uppercase tracking-wider text-white/60 mb-4">
                     Main Menu
                   </h3>
                   <nav className="flex-1 space-y-2" aria-label="Sidebar">
@@ -339,8 +339,8 @@ const TenantLayout = () => {
         </div>
 
         {/* Main content */}
-        <main className="flex-1 bg-background-plot overflow-y-auto">
-          <div className="">
+        <main className=" bg-background-plot overflow-y-auto hide-scrollbar">
+          <div className="min-h-screen">
             <Outlet />
           </div>
         </main>

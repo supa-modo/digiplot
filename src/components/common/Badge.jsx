@@ -8,12 +8,12 @@ const Badge = ({
   const baseClasses = 'badge';
   
   const variantClasses = {
-    default: 'bg-gray-100 text-gray-800',
-    primary: 'bg-blue-100 text-blue-800',
-    success: 'badge-success',
-    warning: 'badge-warning',
-    danger: 'badge-danger',
-    info: 'badge-info',
+    default: 'bg-gray-100 text-gray-800 border border-gray-300',
+    primary: 'bg-blue-100 text-blue-800 border border-blue-300',
+    success: 'badge-success border border-green-300',
+    warning: 'badge-warning border border-amber-300',
+    danger: 'badge-danger border border-red-300',
+    info: 'badge-info border border-blue-300',
   };
   
   const sizeClasses = {

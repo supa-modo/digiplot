@@ -336,7 +336,7 @@ const TenantDashboard = () => {
                       </div>
 
                       <Link to="/tenant/payments" className="block w-full">
-                        <button className="w-full flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium py-2.5 rounded-lg transition-colors duration-200">
+                        <button className="w-full flex items-center justify-center space-x-2 bg-green-700/70 hover:bg-green-800/80 text-white text-sm font-medium py-2.5 rounded-lg transition-colors duration-200">
                           <span>View Payment History</span>
                           <TbArrowRight className="h-4 w-4" />
                         </button>
@@ -352,34 +352,34 @@ const TenantDashboard = () => {
 
       {/* Stats Overview  */}
       <div className="mb-12">
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden relative">
+        <div className="md:bg-white md:rounded-2xl md:shadow-lg overflow-hidden relative">
           {/* Decorative Elements */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-plot via-primary-plot to-secondary-plot"></div>
-          <div className="absolute top-0 right-0 w-24 h-24 bg-primary-plot/5 rounded-full -mr-8 -mt-8 blur-xl"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary-plot/5 rounded-full -ml-10 -mb-10 blur-2xl"></div>
+          <div className="absolute top-0 left-0 w-full h-1 md:bg-gradient-to-r from-secondary-plot via-primary-plot to-secondary-plot"></div>
+          <div className="absolute top-0 right-0 w-24 h-24 md:bg-primary-plot/5 rounded-full -mr-8 -mt-8 blur-xl"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 md:bg-secondary-plot/5 rounded-full -ml-10 -mb-10 blur-2xl"></div>
 
           {/* Content */}
-          <div className="p-6 relative z-10">
+          <div className="p-3 md:p-6 relative z-10">
             <div className="flex flex-wrap -mx-4">
               {/* Property Info */}
               <div className="w-full lg:w-1/4 px-4 pb-4 lg:pb-0 mb-6 lg:mb-0 border-b lg:border-b-0 lg:border-r border-gray-200">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-gradient-to-br from-secondary-plot/20 to-secondary-plot/10 p-3 rounded-xl mr-4 shadow-sm">
-                    <TbBuildingSkyscraper className="h-6 w-6 text-secondary-plot" />
+                    <TbBuildingSkyscraper className="h-8 w-8 text-secondary-plot" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500 mb-1">
+                    <h3 className="text-xs md:text-sm font-medium text-gray-500 mb-1">
                       Your Property
                     </h3>
                     <div className="flex items-center">
-                      <p className="text-2xl font-bold text-secondary-plot">
+                      <p className="text-xl md:text-2xl font-bold text-secondary-plot">
                         {summary.unit?.unitNumber || "N/A"}
                       </p>
-                      <div className="ml-2 px-2 py-0.5 bg-secondary-plot/10 rounded text-xs font-medium text-secondary-plot">
+                      <div className="ml-2 px-2 py-0.5 bg-secondary-plot/10 rounded text-[0.7rem] md:text-xs font-medium text-secondary-plot">
                         {summary.unit?.property?.name || "Msima Homes"}
                       </div>
                     </div>
-                    <div className="flex items-center mt-2 text-xs text-gray-500">
+                    <div className="flex items-center mt-1.5 md:mt-2 text-xs text-gray-500">
                       <TbCalendarEvent className="h-4 w-4 mr-1" />
                       <span>
                         Moved in: {formatDate(summary.tenant.moveInDate)}
@@ -393,21 +393,21 @@ const TenantDashboard = () => {
               <div className="w-full lg:w-1/4 px-4 pb-4 lg:pb-0 mb-6 lg:mb-0 border-b lg:border-b-0 lg:border-r border-gray-200">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-gradient-to-br from-primary-plot/20 to-primary-plot/10 p-3 rounded-xl mr-4 shadow-sm">
-                    <TbCoins className="h-6 w-6 text-primary-plot" />
+                    <TbCoins className="h-8 w-8 text-primary-plot" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500 mb-1">
+                    <h3 className="text-xs md:text-sm font-medium text-gray-500 mb-1">
                       Monthly Rent
                     </h3>
                     <div className="flex items-baseline">
-                      <p className="text-2xl font-bold text-primary-plot">
+                      <p className="text-xl md:text-2xl font-bold text-primary-plot">
                         {formatCurrency(summary.unit?.rentAmount || 0)}
                       </p>
                       <span className="ml-2 text-xs text-gray-500">
                         due on the 1st
                       </span>
                     </div>
-                    <div className="flex items-center mt-2 text-xs text-gray-500">
+                    <div className="flex items-center mt-1.5 md:mt-2 text-[0.7rem] md:text-xs text-gray-500">
                       <TbBed className="h-5 w-5 mr-1" />
                       <span>{summary.unit.bedrooms} Bedroom Unit</span>
                     </div>
@@ -419,10 +419,10 @@ const TenantDashboard = () => {
               <div className="w-full lg:w-1/4 px-4 pb-4 lg:pb-0 mb-6 lg:mb-0 border-b lg:border-b-0 lg:border-r border-gray-200">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-gradient-to-br from-emerald-200/50 to-emerald-100/50 p-3 rounded-xl mr-4 shadow-sm">
-                    <TbTools className="h-6 w-6 text-emerald-600" />
+                    <TbTools className="h-8 w-8 text-emerald-600" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500 mb-1">
+                    <h3 className="text-xs md:text-sm font-medium text-gray-500 mb-0.5 md:mb-1">
                       Maintenance
                     </h3>
                     <div className="flex items-center">
@@ -437,7 +437,7 @@ const TenantDashboard = () => {
                         </div>
                       </div>
                       <div
-                        className={`px-2 py-1 rounded-lg text-xs font-medium ${
+                        className={`px-2 py-0.5 md:py-1 rounded-lg text-[0.7rem] md:text-xs font-medium ${
                           summary.pendingMaintenanceCount > 0
                             ? "bg-emerald-100 text-emerald-800"
                             : "bg-gray-100 text-gray-600"
@@ -448,7 +448,7 @@ const TenantDashboard = () => {
                           : "None"}
                       </div>
                     </div>
-                    <div className="flex items-center mt-2 text-xs text-gray-500">
+                    <div className="flex items-center mt-1.5 md:mt-2 text-xs text-gray-500">
                       <TbLoader2 className="h-4 w-4 mr-1" />
                       <span>
                         {summary.inProgressMaintenanceCount} in progress
@@ -462,18 +462,18 @@ const TenantDashboard = () => {
               <div className="w-full lg:w-1/4 px-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 bg-gradient-to-br from-indigo-200/50 to-indigo-100/50 p-3 rounded-xl mr-4 shadow-sm">
-                    <TbCalendarTime className="h-6 w-6 text-indigo-600" />
+                    <TbCalendarTime className="h-8 w-8 text-indigo-600" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500 mb-1">
+                    <h3 className="text-xs md:text-sm font-medium text-gray-500 mb-1">
                       Lease Status
                     </h3>
                     <div className="flex items-center">
-                      <p className="text-2xl font-bold text-secondary-plot">
+                      <p className="text-xl md:text-2xl font-bold text-secondary-plot">
                         {formatDate(summary.tenant?.leaseEndDate || new Date())}
                       </p>
                       <div
-                        className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
+                        className={`ml-2 px-2 py-0.5 rounded text-[0.7rem] md:text-xs font-medium ${
                           summary.tenant?.leaseEndDate > new Date()
                             ? "bg-indigo-100 text-indigo-800"
                             : "bg-red-100 text-red-800"
@@ -484,7 +484,7 @@ const TenantDashboard = () => {
                           : "Expired"}
                       </div>
                     </div>
-                    <div className="flex items-center mt-2 text-xs text-gray-500">
+                    <div className="flex items-center mt-2 text-[0.7rem] md:text-xs text-gray-500">
                       <TbRefresh className="h-4 w-4 mr-1" />
                       <span>
                         Renewal:{" "}
@@ -509,12 +509,12 @@ const TenantDashboard = () => {
           <div className="flex-1 relative">
             {/* Premium Section Header */}
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-secondary-plot">
+              <h3 className="text-base md:text-lg font-bold text-secondary-plot">
                 Maintenance Requests
               </h3>
               <Link
                 to="/tenant/maintenance"
-                className="group flex items-center text-primary-plot hover:text-primary-plot/80 transition-colors duration-200 text-sm font-medium bg-primary-plot/5 px-3 py-1 rounded-lg border border-primary-plot/10"
+                className="group flex items-center text-primary-plot hover:text-primary-plot/80 transition-colors duration-200 text-[0.8rem] md:text-sm font-medium bg-primary-plot/5 px-3 py-1 rounded-lg border border-primary-plot/10"
               >
                 <span>View All</span>
                 <TbChevronRight className="h-4 w-4 ml-1.5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -522,12 +522,12 @@ const TenantDashboard = () => {
             </div>
 
             {/* Stats Overview - Premium Design */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6">
               <div className="bg-gradient-to-br from-white to-amber-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-amber-100/50 overflow-hidden group">
                 <div className="h-1 bg-amber-400"></div>
-                <div className="p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-xs uppercase tracking-wider font-medium text-amber-800/70">
+                <div className="p-4 md:p-5">
+                  <div className="flex items-center justify-between mb-0.5 md:mb-2">
+                    <h4 className="text-[0.7rem] md:text-xs uppercase tracking-wide font-medium text-amber-800/70">
                       Pending Requests
                     </h4>
                     <div className="bg-amber-100 p-1.5 rounded-lg group-hover:bg-amber-200 transition-colors duration-300">
@@ -549,9 +549,9 @@ const TenantDashboard = () => {
 
               <div className="bg-gradient-to-br from-white to-primary-plot/5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-primary-plot/10 overflow-hidden group">
                 <div className="h-1 bg-primary-plot"></div>
-                <div className="p-5">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-xs uppercase tracking-wider font-medium text-primary-plot/70">
+                <div className="p-4 md:p-5">
+                  <div className="flex items-center justify-between mb-0.5 md:mb-2">
+                    <h4 className="text-[0.7rem] md:text-xs uppercase tracking-wide font-medium text-primary-plot/70">
                       In Progress
                     </h4>
                     <div className="bg-primary-plot/10 p-1.5 rounded-lg group-hover:bg-primary-plot/20 transition-colors duration-300">
@@ -591,12 +591,12 @@ const TenantDashboard = () => {
           <div className="flex-1">
             {/* Section Header */}
             <div className="flex items-center justify-between mb-5">
-              <h3 className="text-lg font-semibold text-secondary-plot">
+              <h3 className="text-base md:text-lg font-semibold text-secondary-plot">
                 Recent Payments
               </h3>
               <Link
                 to="/tenant/payments"
-                className="group flex items-center text-primary-plot hover:text-primary-plot/80 transition-colors duration-200 text-sm font-medium bg-primary-plot/5 px-3 py-1 rounded-lg border border-primary-plot/10"
+                className="group flex items-center text-primary-plot hover:text-primary-plot/80 transition-colors duration-200 text-[0.8rem] md:text-sm font-medium bg-primary-plot/5 px-3 py-1 rounded-lg border border-primary-plot/10"
               >
                 <span>View All</span>
                 <TbChevronRight className="h-4 w-4 ml-1.5 group-hover:translate-x-1 transition-transform duration-300" />
