@@ -222,7 +222,7 @@ const Login = () => {
           }}
         ></div>
         {/* Mobile view header */}
-        <div className="lg:hidden mb-8">
+        <div className="lg:hidden sm:mx-auto mb-8">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-8 h-8 bg-secondary-plot rounded-sm flex items-center justify-center">
               <PiBuildingsBold size={22} className="text-white" />
